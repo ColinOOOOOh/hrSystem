@@ -5,24 +5,20 @@
  	     
 
 <struts>
-	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
-	<constant name="struts.devMode" value="true" /> 	
-	
-	<include file="struts-default.xml" />
-	<package name="hrSystem" extends="struts-default">
-    	<action name="login" class="action.LoginAction">
-    		<result name="success">loginSuccess.jsp</result>
-    		<result name="error">loginFail.jsp</result>    		    	
-			<result name="exception">exception.jsp</result>
-
-		</action>
-		
-    	<action name="regist" class="action.RegistAction">
-    		<result name="success">registSuccess.jsp</result>    
-    		<result name="error">registFail.jsp</result>     			
-		<result name="exception">exception.jsp</result>
-		</action>
-		
-
-	</package>
+    <!-- 开启使用开发模式，详细错误提示 -->
+    <constant name="struts.devMode" value="false" />
+    <!-- 将对象交给spring管理 -->
+    <constant name="struts.objectFactory" value="spring" />
+    <!-- 指定资源编码类型 -->
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 指定每次请求到达，重新加载资源文件 -->
+    <constant name="struts.i18n.reload" value="false" />
+    <!-- 指定每次配置文件更改后，自动重新加载 -->
+    <constant name="struts.configuration.xml.reload" value="false" />
+    <!-- 国际化资源文件 -->
+    <constant name="struts.custom.i18n.resources" value="resources/content/Language" />
+    <!-- 默认后缀名 -->
+    <constant name="struts.action.extension" value="do,action,jhtml,," />
+	<!-- Struts Annotation -->
+    <constant name="actionPackages" value="org.chinasb.framework.modules"/>
 </struts>   

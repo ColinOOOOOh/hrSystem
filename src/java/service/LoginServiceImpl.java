@@ -8,14 +8,20 @@ package service;
 
 import po.UserPo;
 import dao.LoginDao;
+import dao.LoginDaoImpl;
 import java.sql.SQLException;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author acer
  */
+@Service
 public class LoginServiceImpl implements LoginService{
-        private LoginDao m_loginDao = new LoginDao();
+    @Resource
+        private LoginDao m_loginDao = new LoginDaoImpl();
 
      public String checkUserInfo( UserPo user )throws SQLException{
         return  m_loginDao.checkUser(user);

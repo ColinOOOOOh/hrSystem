@@ -6,27 +6,15 @@
 
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+
 import po.UserPo;
 
 /**
  *
  * @author acer
  */
-public class LoginDao {
+public interface LoginDao {
 
-                
-                public String checkUser(UserPo user) 
-		{
-                    if(user.getUserName().equals("a")){
-                        return "SUCCESS";
-                    }else{
-                        return "FAILED";
-                    }
-                    
-		}
+     public String checkUser(UserPo user);
+
 }
