@@ -7,23 +7,22 @@ import javax.servlet.http.HttpSession;
 
 
 import com.opensymphony.xwork2.ActionSupport;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
+
 
 import po.*;
 import service.LoginService;
+import service.LoginServiceImpl;
 
 
 	public class LoginAction extends ActionSupport
 	{  
-		private UserPo_old m_user; 
+		private UserPo m_user; 
 		private LoginService m_loginService;
-		public UserPo_old getUser() {
+		public UserPo getUser() {
 			return m_user;
 		}
 
-		public void setUser( UserPo_old user) {
+		public void setUser( UserPo user) {
 			this.m_user = user;
 		}
 
@@ -32,7 +31,7 @@ import service.LoginService;
 			try
 			{
 				
-				m_loginService =new LoginService();
+				m_loginService =new LoginServiceImpl();
 				if (m_loginService.checkUserInfo(m_user).equals("SUCCESS")) 
 				{
 					HttpServletRequest request = ServletActionContext.getRequest();
