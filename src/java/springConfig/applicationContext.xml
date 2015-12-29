@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- 使用 annotation -->
+<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/> 
+<bean class="org.springframework.beans.factory.annotation. AutowiredAnnotationBeanPostProcessor "/> 
+	<context:annotation-config/>
+
+<!--	 使用 annotation 自动注册bean,并检查@Controller, @Service, @Repository注解已被注入 -->
+	<context:component-scan base-package="org.chinasb.framework.modules" /><!--
+
+	 hibernate属性配置 
+	<context:property-placeholder location="classpath:resources/hibernate/hibernate.properties"/>
+
+	 Hibernate 配置管理 
+	<import resource="applicationContext-persistence.xml" />-->
+</beans>

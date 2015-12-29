@@ -2,11 +2,7 @@ package action;
 import java.sql.SQLException;
 
 import org.apache.struts2.ServletActionContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
-
-import com.opensymphony.xwork2.ActionSupport;
 import javax.annotation.Resource;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
@@ -24,8 +20,8 @@ import service.LoginServiceImpl;
                 @Resource
 		private LoginService m_loginService;
 
-    @Action(value = "/loginAction", 
-            results = { @Result(name = SUCCESS, location = "未知") }
+    @Action(value = "login", 
+            results = { @Result(name = "SUCCESS", location = "index.html"),@Result(name = "ERROR", location = "userRegist.html") }
             )
 		public String execute() 
 		{
