@@ -8,6 +8,8 @@ import javax.servlet.http.HttpSession;
 
 import com.opensymphony.xwork2.ActionSupport;
 import javax.annotation.Resource;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Result;
 import org.springframework.stereotype.Controller;
 
 
@@ -22,7 +24,9 @@ import service.LoginServiceImpl;
                 @Resource
 		private LoginService m_loginService;
 
-
+    @Action(value = "/loginAction", 
+            results = { @Result(name = SUCCESS, location = "未知") }
+            )
 		public String execute() 
 		{
 			try
@@ -37,7 +41,7 @@ import service.LoginServiceImpl;
 				}
 				else
 				{
-					return "ERROR";
+					return "FAILED";
 				}
 			}catch(SQLException e)
 			{

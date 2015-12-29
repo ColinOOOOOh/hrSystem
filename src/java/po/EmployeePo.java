@@ -3,7 +3,7 @@
  * Author:  acer
  * Purpose: Defines the Class Employee
  ***********************************************************************/
-
+package po;
 import java.util.*;
 
 /** @pdOid 230e6387-65f4-4d11-9b79-528abba19fbe */
@@ -77,122 +77,122 @@ public class EmployeePo {
    public SalaryPo salary;
    /** @pdRoleInfo migr=no name=EmployeeSalary assc=reference10 mult=0..1 side=A */
    public EmployeeSalaryPo employeeSalary;
-   
-   
-   /** @pdGenerated default parent getter */
-   public AgencyPo getAgency() {
-      return agency;
-   }
-   
-   /** @pdGenerated default parent setter
-     * @param newAgency */
-   public void setAgency(AgencyPo newAgency) {
-      if (this.agency == null || !this.agency.equals(newAgency))
-      {
-         if (this.agency != null)
-         {
-            AgencyPo oldAgency = this.agency;
-            this.agency = null;
-            oldAgency.removeEmployee(this);
-         }
-         if (newAgency != null)
-         {
-            this.agency = newAgency;
-            this.agency.addEmployee(this);
-         }
-      }
-   }
-   /** @pdGenerated default parent getter */
-   public PostPo getPost() {
-      return post;
-   }
-   
-   /** @pdGenerated default parent setter
-     * @param newPost */
-   public void setPost(PostPo newPost) {
-      if (this.post == null || !this.post.equals(newPost))
-      {
-         if (this.post != null)
-         {
-            PostPo oldPost = this.post;
-            this.post = null;
-            oldPost.removeEmployee(this);
-         }
-         if (newPost != null)
-         {
-            this.post = newPost;
-            this.post.addEmployee(this);
-         }
-      }
-   }
-   /** @pdGenerated default parent getter */
-   public UserPo getUser() {
-      return user;
-   }
-   
-   /** @pdGenerated default parent setter
-     * @param newUser */
-   public void setUser(UserPo newUser) {
-      if (this.user == null || !this.user.equals(newUser))
-      {
-         if (this.user != null)
-         {
-            UserPo oldUser = this.user;
-            this.user = null;
-            oldUser.removeEmployee(this);
-         }
-         if (newUser != null)
-         {
-            this.user = newUser;
-            this.user.addEmployee(this);
-         }
-      }
-   }
-   /** @pdGenerated default parent getter */
-   public SalaryPo getSalary() {
-      return salary;
-   }
-   
-   /** @pdGenerated default parent setter
-     * @param newSalary */
-   public void setSalary(SalaryPo newSalary) {
-      if (this.salary == null || !this.salary.equals(newSalary))
-      {
-         if (this.salary != null)
-         {
-            SalaryPo oldSalary = this.salary;
-            this.salary = null;
-            oldSalary.removeEmployee(this);
-         }
-         if (newSalary != null)
-         {
-            this.salary = newSalary;
-            this.salary.addEmployee(this);
-         }
-      }
-   }
-   /** @pdGenerated default parent getter */
-   public EmployeeSalaryPo getEmployeeSalary() {
-      return employeeSalary;
-   }
-   
-   /** @pdGenerated default parent setter
-     * @param newEmployeeSalary */
-   public void setEmployeeSalary(EmployeeSalaryPo newEmployeeSalary) {
-      if (this.employeeSalary == null || !this.employeeSalary.equals(newEmployeeSalary))
-      {
-         if (this.employeeSalary != null)
-         {
-            EmployeeSalaryPo oldEmployeeSalary = this.employeeSalary;
-            this.employeeSalary = null;
-            oldEmployeeSalary.removeEmployee(this);
-         }
-         if (newEmployeeSalary != null)
-         {
-            this.employeeSalary = newEmployeeSalary;
-            this.employeeSalary.addEmployee(this);
-         }
-      }
-   }
-
 }
+   
+//   /** @pdGenerated default parent getter */
+//   public AgencyPo getAgency() {
+//      return agency;
+//   }
+//   
+//   /** @pdGenerated default parent setter
+//     * @param newAgency */
+//   public void setAgency(AgencyPo newAgency) {
+//      if (this.agency == null || !this.agency.equals(newAgency))
+//      {
+//         if (this.agency != null)
+//         {
+//            AgencyPo oldAgency = this.agency;
+//            this.agency = null;
+//            oldAgency.removeEmployee(this);
+//         }
+//         if (newAgency != null)
+//         {
+//            this.agency = newAgency;
+//            this.agency.addEmployee(this);
+//         }
+//      }
+//   }
+//   /** @pdGenerated default parent getter */
+//   public PostPo getPost() {
+//      return post;
+//   }
+//   
+//   /** @pdGenerated default parent setter
+//     * @param newPost */
+//   public void setPost(PostPo newPost) {
+//      if (this.post == null || !this.post.equals(newPost))
+//      {
+//         if (this.post != null)
+//         {
+//            PostPo oldPost = this.post;
+//            this.post = null;
+//            oldPost.removeEmployee(this);
+//         }
+//         if (newPost != null)
+//         {
+//            this.post = newPost;
+//            this.post.addEmployee(this);
+//         }
+//      }
+//   }
+//   /** @pdGenerated default parent getter */
+//   public UserPo getUser() {
+//      return user;
+//   }
+//   
+//   /** @pdGenerated default parent setter
+//     * @param newUser */
+//   public void setUser(UserPo newUser) {
+//      if (this.user == null || !this.user.equals(newUser))
+//      {
+//         if (this.user != null)
+//         {
+//            UserPo oldUser = this.user;
+//            this.user = null;
+//            oldUser.removeEmployee(this);
+//         }
+//         if (newUser != null)
+//         {
+//            this.user = newUser;
+//            this.user.addEmployee(this);
+//         }
+//      }
+//   }
+//   /** @pdGenerated default parent getter */
+//   public SalaryPo getSalary() {
+//      return salary;
+//   }
+//   
+//   /** @pdGenerated default parent setter
+//     * @param newSalary */
+//   public void setSalary(SalaryPo newSalary) {
+//      if (this.salary == null || !this.salary.equals(newSalary))
+//      {
+//         if (this.salary != null)
+//         {
+//            SalaryPo oldSalary = this.salary;
+//            this.salary = null;
+//            oldSalary.removeEmployee(this);
+//         }
+//         if (newSalary != null)
+//         {
+//            this.salary = newSalary;
+//            this.salary.addEmployee(this);
+//         }
+//      }
+//   }
+//   /** @pdGenerated default parent getter */
+//   public EmployeeSalaryPo getEmployeeSalary() {
+//      return employeeSalary;
+//   }
+//   
+//   /** @pdGenerated default parent setter
+//     * @param newEmployeeSalary */
+//   public void setEmployeeSalary(EmployeeSalaryPo newEmployeeSalary) {
+//      if (this.employeeSalary == null || !this.employeeSalary.equals(newEmployeeSalary))
+//      {
+//         if (this.employeeSalary != null)
+//         {
+//            EmployeeSalaryPo oldEmployeeSalary = this.employeeSalary;
+//            this.employeeSalary = null;
+//            oldEmployeeSalary.removeEmployee(this);
+//         }
+//         if (newEmployeeSalary != null)
+//         {
+//            this.employeeSalary = newEmployeeSalary;
+//            this.employeeSalary.addEmployee(this);
+//         }
+//      }
+//   }
+//
+//}

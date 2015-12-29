@@ -3,8 +3,8 @@
  * Author:  acer
  * Purpose: Defines the Class Salary
  ***********************************************************************/
+package po;
 
-import java.util.*;
 
 /** @pdOid 906c2d30-46d9-4ca2-9b63-a2e94bb39f3f */
 public class SalaryPo {
@@ -45,90 +45,90 @@ public class SalaryPo {
    public AgencyPo agency;
    
    
-   /** @pdGenerated default getter */
-   public java.util.Collection<EmployeePo> getEmployee() {
-      if (employee == null)
-         employee = new java.util.HashSet<EmployeePo>();
-      return employee;
-   }
-   
-   /** @pdGenerated default iterator getter */
-   public java.util.Iterator getIteratorEmployee() {
-      if (employee == null)
-         employee = new java.util.HashSet<EmployeePo>();
-      return employee.iterator();
-   }
-   
-   /** @pdGenerated default setter
-     * @param newEmployee */
-   public void setEmployee(java.util.Collection<EmployeePo> newEmployee) {
-      removeAllEmployee();
-      for (java.util.Iterator iter = newEmployee.iterator(); iter.hasNext();)
-         addEmployee((EmployeePo)iter.next());
-   }
-   
-   /** @pdGenerated default add
-     * @param newEmployee */
-   public void addEmployee(EmployeePo newEmployee) {
-      if (newEmployee == null)
-         return;
-      if (this.employee == null)
-         this.employee = new java.util.HashSet<EmployeePo>();
-      if (!this.employee.contains(newEmployee))
-      {
-         this.employee.add(newEmployee);
-         newEmployee.setSalary(this);      
-      }
-   }
-   
-   /** @pdGenerated default remove
-     * @param oldEmployee */
-   public void removeEmployee(EmployeePo oldEmployee) {
-      if (oldEmployee == null)
-         return;
-      if (this.employee != null)
-         if (this.employee.contains(oldEmployee))
-         {
-            this.employee.remove(oldEmployee);
-            oldEmployee.setSalary((SalaryPo)null);
-         }
-   }
-   
-   /** @pdGenerated default removeAll */
-   public void removeAllEmployee() {
-      if (employee != null)
-      {
-         EmployeePo oldEmployee;
-         for (java.util.Iterator iter = getIteratorEmployee(); iter.hasNext();)
-         {
-            oldEmployee = (EmployeePo)iter.next();
-            iter.remove();
-            oldEmployee.setSalary((SalaryPo)null);
-         }
-      }
-   }
-   /** @pdGenerated default parent getter */
-   public AgencyPo getAgency() {
-      return agency;
-   }
-   
-   /** @pdGenerated default parent setter
-     * @param newAgency */
-   public void setAgency(AgencyPo newAgency) {
-      if (this.agency == null || !this.agency.equals(newAgency))
-      {
-         if (this.agency != null)
-         {
-            AgencyPo oldAgency = this.agency;
-            this.agency = null;
-            oldAgency.removeSalary(this);
-         }
-         if (newAgency != null)
-         {
-            this.agency = newAgency;
-            this.agency.addSalary(this);
-         }
-      }
-   }
+//   /** @pdGenerated default getter */
+//   public java.util.Collection<EmployeePo> getEmployee() {
+//      if (employee == null)
+//         employee = new java.util.HashSet<EmployeePo>();
+//      return employee;
+//   }
+//   
+//   /** @pdGenerated default iterator getter */
+//   public java.util.Iterator getIteratorEmployee() {
+//      if (employee == null)
+//         employee = new java.util.HashSet<EmployeePo>();
+//      return employee.iterator();
+//   }
+//   
+//   /** @pdGenerated default setter
+//     * @param newEmployee */
+//   public void setEmployee(java.util.Collection<EmployeePo> newEmployee) {
+//      removeAllEmployee();
+//      for (java.util.Iterator iter = newEmployee.iterator(); iter.hasNext();)
+//         addEmployee((EmployeePo)iter.next());
+//   }
+//   
+//   /** @pdGenerated default add
+//     * @param newEmployee */
+//   public void addEmployee(EmployeePo newEmployee) {
+//      if (newEmployee == null)
+//         return;
+//      if (this.employee == null)
+//         this.employee = new java.util.HashSet<EmployeePo>();
+//      if (!this.employee.contains(newEmployee))
+//      {
+//         this.employee.add(newEmployee);
+//         newEmployee.setSalary(this);      
+//      }
+//   }
+//   
+//   /** @pdGenerated default remove
+//     * @param oldEmployee */
+//   public void removeEmployee(EmployeePo oldEmployee) {
+//      if (oldEmployee == null)
+//         return;
+//      if (this.employee != null)
+//         if (this.employee.contains(oldEmployee))
+//         {
+//            this.employee.remove(oldEmployee);
+//            oldEmployee.setSalary((SalaryPo)null);
+//         }
+//   }
+//   
+//   /** @pdGenerated default removeAll */
+//   public void removeAllEmployee() {
+//      if (employee != null)
+//      {
+//         EmployeePo oldEmployee;
+//         for (java.util.Iterator iter = getIteratorEmployee(); iter.hasNext();)
+//         {
+//            oldEmployee = (EmployeePo)iter.next();
+//            iter.remove();
+//            oldEmployee.setSalary((SalaryPo)null);
+//         }
+//      }
+//   }
+//   /** @pdGenerated default parent getter */
+//   public AgencyPo getAgency() {
+//      return agency;
+//   }
+//   
+//   /** @pdGenerated default parent setter
+//     * @param newAgency */
+//   public void setAgency(AgencyPo newAgency) {
+//      if (this.agency == null || !this.agency.equals(newAgency))
+//      {
+//         if (this.agency != null)
+//         {
+//            AgencyPo oldAgency = this.agency;
+//            this.agency = null;
+//            oldAgency.removeSalary(this);
+//         }
+//         if (newAgency != null)
+//         {
+//            this.agency = newAgency;
+//            this.agency.addSalary(this);
+//         }
+//      }
+//   }
 
 }

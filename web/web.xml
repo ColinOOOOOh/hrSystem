@@ -16,7 +16,7 @@
 	</context-param>-->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:src/springConfig/applicationContext.xml</param-value>
+		<param-value>classpath:/springConfig/applicationContext.xml</param-value>
 	</context-param>
 <!--	 log4j Listener 
 	<listener>

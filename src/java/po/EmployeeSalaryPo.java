@@ -3,8 +3,8 @@
  * Author:  acer
  * Purpose: Defines the Class EmployeeSalary
  ***********************************************************************/
+package po;
 
-import java.util.*;
 
 /** @pdOid bc65f17d-98f5-4004-839c-fe622de5976e */
 public class EmployeeSalaryPo {
@@ -41,67 +41,67 @@ public class EmployeeSalaryPo {
    public java.util.Collection<EmployeePo> employee;
    
    
-   /** @pdGenerated default getter */
-   public java.util.Collection<EmployeePo> getEmployee() {
-      if (employee == null)
-         employee = new java.util.HashSet<EmployeePo>();
-      return employee;
-   }
-   
-   /** @pdGenerated default iterator getter */
-   public java.util.Iterator getIteratorEmployee() {
-      if (employee == null)
-         employee = new java.util.HashSet<EmployeePo>();
-      return employee.iterator();
-   }
-   
-   /** @pdGenerated default setter
-     * @param newEmployee */
-   public void setEmployee(java.util.Collection<EmployeePo> newEmployee) {
-      removeAllEmployee();
-      for (java.util.Iterator iter = newEmployee.iterator(); iter.hasNext();)
-         addEmployee((EmployeePo)iter.next());
-   }
-   
-   /** @pdGenerated default add
-     * @param newEmployee */
-   public void addEmployee(EmployeePo newEmployee) {
-      if (newEmployee == null)
-         return;
-      if (this.employee == null)
-         this.employee = new java.util.HashSet<EmployeePo>();
-      if (!this.employee.contains(newEmployee))
-      {
-         this.employee.add(newEmployee);
-         newEmployee.setEmployeeSalary(this);      
-      }
-   }
-   
-   /** @pdGenerated default remove
-     * @param oldEmployee */
-   public void removeEmployee(EmployeePo oldEmployee) {
-      if (oldEmployee == null)
-         return;
-      if (this.employee != null)
-         if (this.employee.contains(oldEmployee))
-         {
-            this.employee.remove(oldEmployee);
-            oldEmployee.setEmployeeSalary((EmployeeSalaryPo)null);
-         }
-   }
-   
-   /** @pdGenerated default removeAll */
-   public void removeAllEmployee() {
-      if (employee != null)
-      {
-         EmployeePo oldEmployee;
-         for (java.util.Iterator iter = getIteratorEmployee(); iter.hasNext();)
-         {
-            oldEmployee = (EmployeePo)iter.next();
-            iter.remove();
-            oldEmployee.setEmployeeSalary((EmployeeSalaryPo)null);
-         }
-      }
-   }
+//   /** @pdGenerated default getter */
+//   public java.util.Collection<EmployeePo> getEmployee() {
+//      if (employee == null)
+//         employee = new java.util.HashSet<EmployeePo>();
+//      return employee;
+//   }
+//   
+//   /** @pdGenerated default iterator getter */
+//   public java.util.Iterator getIteratorEmployee() {
+//      if (employee == null)
+//         employee = new java.util.HashSet<EmployeePo>();
+//      return employee.iterator();
+//   }
+//   
+//   /** @pdGenerated default setter
+//     * @param newEmployee */
+//   public void setEmployee(java.util.Collection<EmployeePo> newEmployee) {
+//      removeAllEmployee();
+//      for (java.util.Iterator iter = newEmployee.iterator(); iter.hasNext();)
+//         addEmployee((EmployeePo)iter.next());
+//   }
+//   
+//   /** @pdGenerated default add
+//     * @param newEmployee */
+//   public void addEmployee(EmployeePo newEmployee) {
+//      if (newEmployee == null)
+//         return;
+//      if (this.employee == null)
+//         this.employee = new java.util.HashSet<EmployeePo>();
+//      if (!this.employee.contains(newEmployee))
+//      {
+//         this.employee.add(newEmployee);
+//         newEmployee.setEmployeeSalary(this);      
+//      }
+//   }
+//   
+//   /** @pdGenerated default remove
+//     * @param oldEmployee */
+//   public void removeEmployee(EmployeePo oldEmployee) {
+//      if (oldEmployee == null)
+//         return;
+//      if (this.employee != null)
+//         if (this.employee.contains(oldEmployee))
+//         {
+//            this.employee.remove(oldEmployee);
+//            oldEmployee.setEmployeeSalary((EmployeeSalaryPo)null);
+//         }
+//   }
+//   
+//   /** @pdGenerated default removeAll */
+//   public void removeAllEmployee() {
+//      if (employee != null)
+//      {
+//         EmployeePo oldEmployee;
+//         for (java.util.Iterator iter = getIteratorEmployee(); iter.hasNext();)
+//         {
+//            oldEmployee = (EmployeePo)iter.next();
+//            iter.remove();
+//            oldEmployee.setEmployeeSalary((EmployeeSalaryPo)null);
+//         }
+//      }
+//   }
 
 }
