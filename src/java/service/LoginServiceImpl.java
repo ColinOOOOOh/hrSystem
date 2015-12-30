@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import vo.LoginVo;
 
 /**
  *
@@ -23,7 +24,7 @@ public class LoginServiceImpl implements LoginService{
     @Resource
         private LoginDao m_loginDao = new LoginDaoImpl();
 
-     public String checkUserInfo( UserPo user )throws SQLException{
+     public String checkUserInfo( LoginVo user ){
         return  m_loginDao.checkUser(user);
     }
 }

@@ -8,6 +8,7 @@ package dao;
 
 import org.springframework.stereotype.Repository;
 import po.UserPo;
+import vo.LoginVo;
 
 /**
  *
@@ -16,9 +17,9 @@ import po.UserPo;
 @Repository
 public class LoginDaoImpl implements LoginDao {
     
-                    public String checkUser(UserPo user) 
+                    public String checkUser(LoginVo user) 
 		{
-                    if(user.getUserName().equals("a")){
+                    if(user.getUsername().equals("davis") && user.getPassword().equals("123")){
                         return "SUCCESS";
                     }else{
                         return "FAILED";

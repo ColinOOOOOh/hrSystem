@@ -6,12 +6,11 @@
 
 package service;
 
-import po.UserPo;
-
 import java.sql.*;    //导入JDBC
+import vo.LoginVo;
 
 public interface LoginService {
     
-    public String checkUserInfo( UserPo user )throws SQLException ;
+    public String checkUserInfo( LoginVo user );
 
 }

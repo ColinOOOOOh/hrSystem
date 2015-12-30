@@ -8,6 +8,7 @@ package dao;
 
 
 import po.UserPo;
+import vo.LoginVo;
 
 /**
  *
@@ -15,6 +16,6 @@ import po.UserPo;
  */
 public interface LoginDao {
 
-     public String checkUser(UserPo user);
+     public String checkUser(LoginVo user);
 
 }

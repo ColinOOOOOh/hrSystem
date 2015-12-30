@@ -17,8 +17,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.BlockJUnit4ClassRunner;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockHttpServletResponse;
+
+import vo.LoginVo;
 
 /**
  *
@@ -48,10 +48,20 @@ public class testLoginAction extends UnitTestBase{
 
 
      @Test
-     public void test() {
-         //MockHttpServletRequest request = new MockHttpServletRequest();
-         //MockHttpServletResponse response = new MockHttpServletResponse();
-         LoginAction loginAction = super.getBean("LoginAction");
-         System.out.println(loginAction.getClass().getName());
+     public void loginTest() {
+//         MockHttpServletRequest request = new MockHttpServletRequest();
+//         MockHttpServletResponse response = new MockHttpServletResponse();
+         LoginAction loginAction = super.getBean("loginAction");
+         LoginVo user1 = new LoginVo();
+         user1.setUsername("davis");
+         user1.setPassword("123");
+         loginAction.setM_user(user1);
+         System.out.println( user1.toString());
+         assertTrue(loginAction.execute().equals("SUCCESS"));
+         LoginVo user2 = new LoginVo();
+         user2.setUsername("Colin");
+         user2.setPassword("321");
+         loginAction.setM_user(user2);
+         assertTrue(loginAction.execute().equals("FAILED"));
      }
 }

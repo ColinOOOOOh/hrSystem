@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:context="http://www.springframework.org/schema/"
+    xmlns:context="http://www.springframework.org/schema/context"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.2.xsd" >
 
-	<!-- 使用 annotation -->
 <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/> 
-<bean class="org.springframework.beans.factory.annotation. AutowiredAnnotationBeanPostProcessor "/> 
-	<context:annotation-config/>
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	<!-- 使用 annotation -->
 
-<!--	 使用 annotation 自动注册bean,并检查@Controller, @Service, @Repository注解已被注入 -->
-	<context:component-scan base-package="org.chinasb.framework.modules" /><!--
+    <context:annotation-config/>
 
-	 hibernate属性配置 
-	<context:property-placeholder location="classpath:resources/hibernate/hibernate.properties"/>
+<!--     使用 annotation 自动注册bean,并检查@Controller, @Service, @Repository注解已被注入 -->
+    <context:component-scan base-package="action" />
+    <context:component-scan base-package="dao" />
+    <context:component-scan base-package="service" /><!--
 
-	 Hibernate 配置管理 
-	<import resource="applicationContext-persistence.xml" />-->
+     hibernate属性配置 
+    <context:property-placeholder location="classpath:resources/hibernate/hibernate.properties"/>
+
+     Hibernate 配置管理 
+    <import resource="applicationContext-persistence.xml" />-->
 </beans>

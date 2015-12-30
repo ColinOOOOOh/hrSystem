@@ -9,16 +9,18 @@
     <constant name="struts.devMode" value="false" />
     <!-- 将对象交给spring管理 -->
     <constant name="struts.objectFactory" value="spring" />
-    <!-- 指定资源编码类型 -->
+<!--   指定资源编码类型 -->
     <constant name="struts.i18n.encoding" value="UTF-8" />
-	<!-- 指定每次请求到达，重新加载资源文件 -->
+<!--	 指定每次请求到达，重新加载资源文件 -->
     <constant name="struts.i18n.reload" value="false" />
-    <!-- 指定每次配置文件更改后，自动重新加载 -->
-    <constant name="struts.configuration.xml.reload" value="false" />
     <!-- 国际化资源文件 -->
     <constant name="struts.custom.i18n.resources" value="resources/content/Language" />
     <!-- 默认后缀名 -->
     <constant name="struts.action.extension" value="do,action,jhtml,," />
 	<!-- Struts Annotation -->
     <constant name="actionPackages" value="org.chinasb.framework.modules"/>
+    <!-- 当struts.xml改动后，是否重新加载。默认值为false(生产环境下使用),开发阶段最好打开  --> 
+
+    <constant name="struts.configuration.xml.reload" value="true"/>
+<!--    <package name="struts2" extends="struts-default"/>-->
 </struts>   
