@@ -25,9 +25,9 @@ import vo.LoginVo;
  * @author acer
  */
 @RunWith(BlockJUnit4ClassRunner.class)
-public class testLoginAction extends UnitTestBase{
+public class LoginActionTest extends UnitTestBase{
     
-    public testLoginAction() {
+    public LoginActionTest() {
     }
     
     @BeforeClass
