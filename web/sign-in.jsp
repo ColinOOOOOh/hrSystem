@@ -78,11 +78,11 @@
         <div class="block">
             <p class="block-heading">Sign In</p>
             <div class="block-body">
-                <s:form action="login">
+                <s:form action="loginAction">
                     <label>用户名</label>
-                    <s:textfield name="m_user.username" class="span12"/>
+                    <s:textfield name="user.username"/>
                     <label>密码</label>
-                    <s:textfield name="m_user.passward" class="span12"/>
+                    <s:textfield name="user.password"/>
                     <input type="submit" value="登陆" class="btn btn-primary pull-right">
                     <div class="clearfix"></div>
                 </s:form>

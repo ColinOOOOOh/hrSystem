@@ -22,9 +22,11 @@ import vo.LoginVo;
 @Service
 public class LoginServiceImpl implements LoginService{
     @Resource
-        private LoginDao m_loginDao = new LoginDaoImpl();
+        private LoginDao m_loginDao;
 
+    @Override
      public String checkUserInfo( LoginVo user ){
+        m_loginDao = new LoginDaoImpl();
         return  m_loginDao.checkUser(user);
     }
 }

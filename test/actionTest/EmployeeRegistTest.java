@@ -7,6 +7,8 @@ package actionTest;
  */
 
 import base.UnitTestBase;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,6 +17,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.BlockJUnit4ClassRunner;
+import org.springframework.mock.web.MockHttpServletRequest;
 
 /**
  *
@@ -42,9 +45,21 @@ public class EmployeeRegistTest extends UnitTestBase{
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+
+//     @Test
+//     public void getJson() {
+//         MockHttpServletRequest request = new MockHttpServletRequest();
+//         String jsonStr;
+//         JSONArray jsonArray = JSONArray.fromObject(jsonStr);
+//         jsonArray.
+//         for(int i=0;i<jsonArray.length(); i++){
+//            JSONObject jsonJ = jsonArray.getJSONObject(i);
+//            jsonJ.getInt("name");
+//            jsonJ.getString("age");
+//        }
+////         request.setParameter("angency", jsonStr );
+//         EmployeeRegistAction era = super.getBean("employeeRegistAction");
+//         era.execute()
+//         
+//     }
 }

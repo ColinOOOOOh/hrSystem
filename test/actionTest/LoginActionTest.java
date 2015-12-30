@@ -56,7 +56,6 @@ public class LoginActionTest extends UnitTestBase{
          user1.setUsername("davis");
          user1.setPassword("123");
          loginAction.setM_user(user1);
-         System.out.println( user1.toString());
          assertTrue(loginAction.execute().equals("SUCCESS"));
          LoginVo user2 = new LoginVo();
          user2.setUsername("Colin");

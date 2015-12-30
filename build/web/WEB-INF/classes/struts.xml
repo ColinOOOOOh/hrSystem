@@ -18,7 +18,7 @@
     <!-- 默认后缀名 -->
     <constant name="struts.action.extension" value="do,action,jhtml,," />
 	<!-- Struts Annotation -->
-    <constant name="actionPackages" value="org.chinasb.framework.modules"/>
+    <constant name="actionPackages" value="action"/>
     <!-- 当struts.xml改动后，是否重新加载。默认值为false(生产环境下使用),开发阶段最好打开  --> 
 
     <constant name="struts.configuration.xml.reload" value="true"/>

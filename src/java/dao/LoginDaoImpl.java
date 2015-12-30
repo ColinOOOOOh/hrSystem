@@ -17,8 +17,9 @@ import vo.LoginVo;
 @Repository
 public class LoginDaoImpl implements LoginDao {
     
+                    @Override
                     public String checkUser(LoginVo user) 
-		{
+		{         
                     if(user.getUsername().equals("davis") && user.getPassword().equals("123")){
                         return "SUCCESS";
                     }else{

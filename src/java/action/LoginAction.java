@@ -19,28 +19,30 @@ import vo.LoginVo;
 	public class LoginAction extends BaseAction
 	{  
                 
-		private LoginVo m_user; 
+		private LoginVo user; 
 
-    public LoginVo getM_user() {
-        return m_user;
-    }
+                public LoginVo getUser() {
+                    System.out.println("get user");
+                    return user;
+                }
 
-    public void setM_user(LoginVo m_user) {
-        this.m_user = m_user;
-    }
+                public void setUser(LoginVo m_user) {
+                    System.out.println("set user");
+                    this.user = m_user;
+                }
                 @Autowired
 		private LoginService m_loginService;
 
-    @Action(value = "login", 
-            results = { @Result(name = "SUCCESS", location = "index.html"),@Result(name = "FAILED", location = "userRegist.html") }
-            )
+                @Action(value = "loginAction", 
+                results = { @Result(name = "SUCCESS", location = "/index.html"),@Result(name = "FAILED", location = "/userRegist.html") }
+                )
 		public String execute() 
 		{
 				m_loginService =new LoginServiceImpl();
-				if (m_loginService.checkUserInfo(m_user).equals("SUCCESS")) 
+				if (m_loginService.checkUserInfo(user).equals("SUCCESS")) 
 				{
                                         setServletRequest(ServletActionContext.getRequest());
-					  httpSession.setAttribute("u", m_user);
+					  httpSession.setAttribute("u", user);
 					return  "SUCCESS"; 
 				}
 				else
