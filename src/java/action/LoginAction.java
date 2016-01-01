@@ -36,6 +36,8 @@ import vo.LoginVo;
                 @Action(value = "loginAction", 
                 results = { @Result(name = "SUCCESS", location = "/index.html"),@Result(name = "FAILED", location = "/userRegist.html") }
                 )
+                
+                @Override
 		public String execute() 
 		{
 				m_loginService =new LoginServiceImpl();

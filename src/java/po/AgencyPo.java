@@ -5,13 +5,13 @@
  ***********************************************************************/
 package po;
 
+import java.util.Collection;
+
 
 /** @pdOid edf78ad5-1375-4c67-bbbf-ab5eff8659d0 */
 public class AgencyPo {
    /** @pdOid cec1b46f-07ae-4bd1-8409-a04458423feb */
    public java.lang.String agencyName;
-   /** @pdOid 5489f10f-8ba9-40c2-9263-fab6aec5ea26 */
-   public java.lang.String agencyNum;
    /** @pdOid abaafe55-fb25-48b4-8094-26d8326b9ea7 */
    public long agencyId;
    
@@ -23,6 +23,58 @@ public class AgencyPo {
    public java.util.Collection<SalaryPo> salary;
    /** @pdRoleInfo migr=no name=Agency assc=reference12 mult=0..1 side=A */
    public AgencyPo agencyA;
+
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
+
+
+    public long getAgencyId() {
+        return agencyId;
+    }
+
+    public void setAgencyId(long agencyId) {
+        this.agencyId = agencyId;
+    }
+
+    public Collection<EmployeePo> getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Collection<EmployeePo> employee) {
+        this.employee = employee;
+    }
+
+    public Collection<AgencyPo> getAgencyB() {
+        return agencyB;
+    }
+
+    public void setAgencyB(Collection<AgencyPo> agencyB) {
+        this.agencyB = agencyB;
+    }
+
+    public Collection<SalaryPo> getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Collection<SalaryPo> salary) {
+        this.salary = salary;
+    }
+
+    public AgencyPo getAgencyA() {
+        return agencyA;
+    }
+
+    public void setAgencyA(AgencyPo agencyA) {
+        this.agencyA = agencyA;
+    }
+   
+   
+   
 }
    
 //   /** @pdGenerated default getter */
