@@ -8,6 +8,7 @@ package action;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -44,16 +45,18 @@ public class EmployeeRegistAction extends BaseAction{
                 results = { @Result(name = "SUCCESS", location = "/index.html"),@Result(name = "FAILED", location = "/userRegist.html") }
                 )
     public String execute(){
+        employeeRegistServiceImpl = new EmployeeRegisterServiceImpl();
         agencyList = employeeRegistServiceImpl.getAgencyList();
+        
+        
         lv1_agencyArray = new JSONArray();
-
         for(Iterator<AgencyPo> i = agencyList.iterator(); i.hasNext();){
                 AgencyPo a1 = i.next();
             if( a1.getAgencyA() == null){
                 agencyJSON = new JSONObject();
                 agencyJSON.put("name", a1.getAgencyName());
                 agencyJSON.put("id", a1.getAgencyId());
-                lv1_agencyArray.add(agencyJSON);
+                
                 //lv2
                 lv2_agencyArray = new JSONArray();
                 Collection<AgencyPo> lv2_collection =  a1.getAgencyB();
@@ -62,7 +65,7 @@ public class EmployeeRegistAction extends BaseAction{
                     AgencyPo a2 = l.next();
                     agencyJSON.put("name", a2.getAgencyName());
                     agencyJSON.put("id", a2.getAgencyId());
-                    lv2_agencyArray.add(agencyJSON);
+                    
                     //lv3
                     lv3_agencyArray = new JSONArray();
                     Collection<AgencyPo> lv3_collection =  a2.getAgencyB();
@@ -73,8 +76,11 @@ public class EmployeeRegistAction extends BaseAction{
                         agencyJSON.put("id", a3.getAgencyId());
                         lv3_agencyArray.add(agencyJSON);
                     }
+                    agencyJSON.put("value", lv3_agencyArray);
+                    lv2_agencyArray.add(agencyJSON);
                 }
-                
+                agencyJSON.put("value", lv2_agencyArray);
+                lv1_agencyArray.add(agencyJSON);
             }
         }
   

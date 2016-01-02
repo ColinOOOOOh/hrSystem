@@ -40,7 +40,8 @@ public class EmployeeRegistDb {
             Agency010000.setAgencyName("集团A");
             Agency000100.setAgencyId(01);
             Agency000100.setAgencyA(Agency010000);
-            Agency000100.setAgencyName("软件公司B");
+            Agency000100.setAgencyName("软件公司A");
+            Agency000100.setAgencyB(AgencyChild000100);
             AgencyChild000100.add(Agency000001);
             Agency000001.setAgencyId(01);
             Agency000001.setAgencyName("外包组A");
@@ -56,12 +57,13 @@ public class EmployeeRegistDb {
             Agency000200.setAgencyId(02);
             Agency000200.setAgencyA(Agency020000);
             Agency000200.setAgencyName("软件公司B");
+            Agency000200.setAgencyB(AgencyChild000200);
             AgencyChild000200.add(Agency000002);
             Agency000002.setAgencyId(02);
             Agency000002.setAgencyName("外包组B");
             Agency000002.setAgencyA(Agency000200);
             
-            List AgencyList = new LinkedList();
+            AgencyList = new LinkedList();
             AgencyList.add(Agency010000);
             AgencyList.add(Agency000100);
             AgencyList.add(Agency000001);

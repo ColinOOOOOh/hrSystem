@@ -19,10 +19,10 @@ import po.AgencyPo;
 @Service
 public class EmployeeRegisterServiceImpl implements EmployeeRegisterService{
     @Resource
-    private EmployeeRegistDaoImpl employeeRegistDao;
+    private EmployeeRegistDaoImpl employeeRegistDaoImpl;
     @Override
     public List<AgencyPo> getAgencyList (){
-        employeeRegistDao = new EmployeeRegistDaoImpl();
-        return employeeRegistDao.getAgencyList();
+        employeeRegistDaoImpl = new EmployeeRegistDaoImpl();
+        return employeeRegistDaoImpl.getAgencyList();
     }
 }

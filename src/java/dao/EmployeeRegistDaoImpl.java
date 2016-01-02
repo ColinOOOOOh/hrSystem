@@ -23,7 +23,7 @@ public class EmployeeRegistDaoImpl implements EmployeeRegistDao{
 
     @Override
     public List<AgencyPo> getAgencyList() {
-        
+        employeeRegistDb = new EmployeeRegistDb();
         return employeeRegistDb.getAgencyList();
 //        if(level == 1){
 //            for( int i = 0; i < agencyList.size(); i++ ){
