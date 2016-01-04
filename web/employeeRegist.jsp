@@ -233,33 +233,31 @@
       <div class="tab-pane active in" id="home">
     <s:form id="tab" action="EmployeeRegistAction">
 
-        <p id="Agency">
+        <p id="Agency">//你写的
         <label>一级机构</label>
-        <s:select name="employee.Agency1" id="Agency1" class="input-xlarge">
-        <option value=" ">0</option>
-        </s:select>
+        <s:select name="employee.Agency1" id="Agency1" class="input-xlarge" list="headerValue"/>
                 
         <label>二级机构</label>
-        <s:select name="employee.Agency2" id="Agency2" class="input-xlarge"/>
+        <s:select name="employee.Agency2" id="Agency2" class="input-xlarge" list="headerValue"/>
 
         <label>三级机构</label>
-        <s:select name="employee.Agency3" id="Agency3" class="input-xlarge"/>
+        <s:select name="employee.Agency3" id="Agency3" class="input-xlarge" list="headerValue"/>
 
         </p>
         <label>职位分类</label>
-        <s:select name="employee.position_class" id="" class="input-xlarge"/>
+        <s:select name="employee.position_class"  class="input-xlarge" list="headerValue"/>
             <option value="职位分类A">职位分类A</option>
             <option value="职位分类B">职位分类B</option>
             <option value="职位分类C">职位分类C</option>
         
         <label>职位名称</label>
-        <s:select name="employee.position_name" class="input-xlarge"/>
+        <s:select name="employee.position_name" class="input-xlarge" list="headerValue"/>
             <option value="职位名称A">职位名称A</option>
             <option value="职位名称B">职位名称B</option>
             <option value="职位名称C">职位名称C</option>
             
         <label>职称</label>
-        <s:select name="employee.position_title"  class="input-xlarge"/>
+        <s:select name="employee.position_title"  class="input-xlarge" list="headerValue"/>
             <option value="职位名称A">职位名称A</option>
             <option value="职位名称B">职位名称B</option>
             <option value="职位名称C">职位名称C</option>
@@ -268,7 +266,7 @@
         <s:textfield name="employee.name" type="text" class="input-xlarge"/>
         
         <label>性别</label>
-        <s:select name="employee.sex" id="" class="input-xlarge"/>
+        <s:select name="employee.sex" id="" class="input-xlarge" list="headerValue"/>
             <option value="男">职位名称A</option>
             <option value="女">职位名称B</option>
         
@@ -291,7 +289,7 @@
         <s:textfield name="employee.zip_code" type="text" class="input-xlarge"/>
         
         <label>国籍</label>
-        <s:select name="employee.country" id="" class="input-xlarge"/>
+        <s:select name="employee.country" id="" class="input-xlarge" list="headerValue"/>
             <option value="男">职位名称A</option>
             <option value="女">职位名称B</option>
         
@@ -300,7 +298,7 @@
         <s:textfield name="employee.birthplace" type="text" class="input-xlarge"/>
         
         <label>政治面貌</label>
-        <s:select class="form-control" name="employee.political" />
+        <s:select class="form-control" name="employee.political" list="headerValue"/>
                    <option value="群众">群众</option>
                    <option value="中共党员">中共党员</option>
                    <option value="中共预备党员">中共预备党员</option>
@@ -315,7 +313,7 @@
                    <option value="台盟盟员">台盟盟员</option>
                    <option value="无党派民主人士">无党派民主人士</option>
         <label>政治面貌</label>
-        <s:select class="form-control" name="employee.religious"/>
+        <s:select class="form-control" name="employee.religious" list="headerValue"/>
                     <option value="无">无</option>
                     <option value="佛教">佛教</option>
                     <option value="道教">道教</option>
@@ -334,7 +332,7 @@
         <s:textfield name="employee.age" type="text" class="input-xlarge"/>
         
         <label>学历</label>
-        <s:select class="form-control" name="employee.educational"/>
+        <s:select class="form-control" name="employee.educational" list="headerValue"/>
             <option value="本科">本科</option>
             <option value="研究生">研究生</option>
             <option value="大专">大专</option>
@@ -350,10 +348,10 @@
         <s:textfield name="employee.age" type="text" class="input-xlarge"/>
         
         <label>薪酬标准</label>
-        <s:select name="employee.salaryTyep" id="Agency2" class="input-xlarge"/>
+        <s:select name="employee.salaryTyep" id="Agency2" class="input-xlarge" list="headerValue"/>
         
         <label>开户行</label>
-        <s:textfield name="employee.bank" type="text" class="input-xlarge"/>
+        <s:textfield name="employee.bank" type="text" class="input-xlarge" />
         
         <label>账号</label>
         <s:textfield name="employee.bank_card_num" type="text" class="input-xlarge"/>

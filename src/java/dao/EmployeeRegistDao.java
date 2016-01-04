@@ -9,6 +9,7 @@ package dao;
 
 import java.util.List;
 import po.AgencyPo;
+import vo.EmployeeRegistVo;
 
 /**
  *
@@ -16,5 +17,5 @@ import po.AgencyPo;
  */
 public interface EmployeeRegistDao {
 
-
+public void getEmployeeRegistInfoVo(EmployeeRegistVo employeeRegistVo);
 }

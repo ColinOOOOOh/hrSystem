@@ -60,9 +60,9 @@ public class EmployeeRegistTest extends UnitTestBase{
      public void getJsonTest() {
 //         MockHttpServletRequest request = new MockHttpServletRequest();
 
-         EmployeeRegistAction era = super.getBean("employeeRegistAction");
-         System.out.println(era.execute());
-         System.out.println(era.getJsonStr());
+//         EmployeeRegistAction era = super.getBean("employeeRegistAction");
+//         System.out.println(era.execute());
+//         System.out.println(era.getJsonStr());
 
      }
 }

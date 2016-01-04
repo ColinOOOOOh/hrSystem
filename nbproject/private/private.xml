@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/acer/Desktop/HumanResourceSystem/HumanResourceSystem/src/java/action/EmployeeRegistAction.java</file>
-            <file>file:/C:/Users/acer/Desktop/HumanResourceSystem/HumanResourceSystem/web/sign-in.jsp</file>
             <file>file:/C:/Users/acer/Desktop/HumanResourceSystem/HumanResourceSystem/web/employeeRegist.jsp</file>
-            <file>file:/C:/Users/acer/Desktop/HumanResourceSystem/HumanResourceSystem/web/employeeRegistSuccess.html</file>
-            <file>file:/C:/Users/acer/Desktop/HumanResourceSystem/HumanResourceSystem/web/index.html</file>
+            <file>file:/C:/Users/acer/Desktop/HumanResourceSystem/HumanResourceSystem/src/java/service/GetRegistInfoServiceImpl.java</file>
+            <file>file:/C:/Users/acer/Desktop/HumanResourceSystem/HumanResourceSystem/src/java/service/EmployeeRegistServiceImpl.java</file>
+            <file>file:/C:/Users/acer/Desktop/HumanResourceSystem/HumanResourceSystem/src/java/dao/GetRegistInfoDaoImpl.java</file>
         </group>
     </open-files>
 </project-private>
