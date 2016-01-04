@@ -18,30 +18,7 @@ import testDb.EmployeeRegistDb;
 @Repository
 public class EmployeeRegistDaoImpl implements EmployeeRegistDao{
  
-    private EmployeeRegistDb employeeRegistDb;
     
 
-    @Override
-    public List<AgencyPo> getAgencyList() {
-        employeeRegistDb = new EmployeeRegistDb();
-        return employeeRegistDb.getAgencyList();
-//        if(level == 1){
-//            for( int i = 0; i < agencyList.size(); i++ ){
-//                if( agencyList.get(i).agencyId == agencyId && agencyList.get(i).getAgencyA() == null ){
-//                        returnAgency = agencyList.get(i);
-//                    break;
-//                }
-//            }
-//        }else if(level == 2){
-//            for( int i = 0; i < agencyList.size(); i++ ){
-//                if( agencyList.get(i).agencyId == agencyId && agencyList.get(i).getAgencyA().getAgencyA() == null ){
-//                        returnAgency = agencyList.get(i);
-//                    break;
-//                }
-//            }
-//        }
-        
-    }
-        
         
 }

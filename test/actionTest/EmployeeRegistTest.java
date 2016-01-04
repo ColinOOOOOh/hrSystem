@@ -62,7 +62,7 @@ public class EmployeeRegistTest extends UnitTestBase{
 
          EmployeeRegistAction era = super.getBean("employeeRegistAction");
          System.out.println(era.execute());
-         System.out.println(era.getLv1_agencyArray().toString());
+         System.out.println(era.getJsonStr());
 
      }
 }

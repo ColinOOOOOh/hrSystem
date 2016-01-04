@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 
-package dao;
-
+package service;
 
 import java.util.List;
 import po.AgencyPo;
@@ -14,7 +13,6 @@ import po.AgencyPo;
  *
  * @author acer
  */
-public interface EmployeeRegistDao {
-
-
+public interface EmployeeRegistService {
+        
 }

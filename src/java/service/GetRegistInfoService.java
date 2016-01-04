@@ -13,6 +13,6 @@ import po.AgencyPo;
  *
  * @author acer
  */
-public interface EmployeeRegisterService {
-        public List<AgencyPo> getAgencyList ();
+public interface GetRegistInfoService {
+    public List<AgencyPo> getAgencyList ();
 }

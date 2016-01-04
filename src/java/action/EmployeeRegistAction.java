@@ -16,7 +16,9 @@ import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.springframework.stereotype.Controller;
 import po.AgencyPo;
-import service.EmployeeRegisterServiceImpl;
+import service.EmployeeRegistServiceImpl;
+import service.GetRegistInfoServiceImpl;
+import vo.EmployeeRegistVo;
 
 /**
  *
@@ -24,72 +26,36 @@ import service.EmployeeRegisterServiceImpl;
  */
 @Controller
 public class EmployeeRegistAction extends BaseAction{
-    private List<AgencyPo> agencyList;
-    private JSONObject lv1_agencyJSON;
-    private JSONObject lv2_agencyJSON;
-    private JSONObject lv3_agencyJSON;
-    private JSONArray lv1_agencyArray;
-    private JSONArray lv2_agencyArray;
-    private JSONArray lv3_agencyArray;
-    private EmployeeRegisterServiceImpl employeeRegistServiceImpl;
-    private String jsonStr;
 
+    private EmployeeRegistServiceImpl employeeRegistServiceImpl;
+    private EmployeeRegistVo employeeRegistVo;
 
-    public String getJsonStr() {
-        return jsonStr;
+    public EmployeeRegistServiceImpl getEmployeeRegistServiceImpl() {
+        return employeeRegistServiceImpl;
     }
 
-    public void setJsonStr(String jsonStr) {
-        this.jsonStr = jsonStr;
+    public void setEmployeeRegistServiceImpl(EmployeeRegistServiceImpl employeeRegistServiceImpl) {
+        this.employeeRegistServiceImpl = employeeRegistServiceImpl;
+    }
+
+    public EmployeeRegistVo getEmployeeRegistVo() {
+        return employeeRegistVo;
+    }
+
+    public void setEmployeeRegistVo(EmployeeRegistVo employeeRegistVo) {
+        this.employeeRegistVo = employeeRegistVo;
     }
 
 
-    
-    
-    @Override
-                    @Action(value = "employeeRegisterAction", 
-                results = { @Result(name = "SUCCESS", location = "/index.html"),@Result(name = "FAILED", location = "/userRegist.html") }
+        @Override
+ @Action(value = "employeeRegisterAction", 
+                results = { @Result(name = "SUCCESS", location = "/employeeRegistSuccess.html"),@Result(name = "FAILED", location = "/employeeRegistFailed.html") }
                 )
     public String execute(){
-        employeeRegistServiceImpl = new EmployeeRegisterServiceImpl();
-        agencyList = employeeRegistServiceImpl.getAgencyList();
-        
-        
-        lv1_agencyArray = new JSONArray();
-        for(Iterator<AgencyPo> i = agencyList.iterator(); i.hasNext();){
-                AgencyPo a1 = i.next();
-            if( a1.getAgencyA() == null){
-                lv1_agencyJSON = new JSONObject();
-                lv1_agencyJSON.put("name", a1.getAgencyName());
-                lv1_agencyJSON.put("id", a1.getAgencyId());
-                
-                //lv2
-                lv2_agencyArray = new JSONArray();
-                Collection<AgencyPo> lv2_collection =  a1.getAgencyB();
-                for(Iterator<AgencyPo> l = lv2_collection.iterator(); l.hasNext();){
-                    lv2_agencyJSON = new JSONObject();
-                    AgencyPo a2 = l.next();
-                    lv2_agencyJSON.put("name", a2.getAgencyName());
-                    lv2_agencyJSON.put("id", a2.getAgencyId());
-                    
-                    //lv3
-                    lv3_agencyArray = new JSONArray();
-                    Collection<AgencyPo> lv3_collection =  a2.getAgencyB();
-                    for(Iterator<AgencyPo> j = lv3_collection.iterator(); j.hasNext();){
-                        lv3_agencyJSON = new JSONObject();
-                        AgencyPo a3 = j.next();
-                        lv3_agencyJSON.put("name", a3.getAgencyName());
-                        lv3_agencyJSON.put("id", a3.getAgencyId());
-                        lv3_agencyArray.add(lv3_agencyJSON);
-                    }
-                    lv2_agencyJSON.put("value", lv3_agencyArray);
-                    lv2_agencyArray.add(lv2_agencyJSON);
-                }
-                lv1_agencyJSON.put("value", lv2_agencyArray);
-                lv1_agencyArray.add(lv1_agencyJSON);
-            }
-        }
-        jsonStr = lv1_agencyArray.toString();
-        return "SUCCESS";
+        employeeRegistServiceImpl = new EmployeeRegistServiceImpl();
+        employeeRegistServiceImpl.getRegistInfoVo(employeeRegistVo);
+        return "success";
+        //缺failed
     }
+
 }

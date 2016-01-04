@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,8 +16,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
 
-    <script src="lib/jquery-1.7.2.min.js" type="text/javascript"></script>
-
+    <script src="lib/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="lib/js/jquery-min.js" type="text/javascript"></script>
     <!-- Demo page code -->
 
     <style type="text/css">
@@ -47,27 +50,31 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
     
-    <script src="jquery-min.js"></script>
-<script type="text/javascript" src="areadata.js"></script> 
 <script type="text/javascript">
 
     var defaults = {
-        s1: 'Select1',
-        s2: 'Select2',
-        s3: 'Select3',
+        s1: 'Agency1',
+        s2: 'Agency2',
+        s3: 'Agency3',
         v1: 120000,
         v2: 120200,
         v3: 120224
     };
+    //传入jsonStr
+    var threeSelectData = <s:property value="#request.jsonStr" escape="false"/>;
     
     $(function () {
+        /*
         //get json from action
-        $.getJSON("EmployeeRegistAction", jsonStr, succuess_callback);
-        function succuess_callback() {
-
-        threeSelectData = JSON.parse(jsonStr);
-}
-        $("#Agency");
+        var jsonStr;
+        $.getJSON("employeeRegisterAction.action", jsonStr, function (data, textStatus){
+            if(textStatus == 'success'){
+                threeSelectData = data;
+                System.out.println("JSON.parse(jsonStr)");
+            }
+        });
+        
+        $("#Agency");*/
         threeSelect(defaults);
     });
     function threeSelect(config) {
@@ -110,7 +117,7 @@
         function appendOptionTo($o, k, v, d) {
             var $opt = $("<option>").text(k).val(v);
             if (v === d) {
-                $opt.attr("selected", "selected")
+                $opt.attr("selected", "selected");
             }
             $opt.appendTo($o);
         }
@@ -224,54 +231,164 @@
     </ul>
     <div id="myTabContent" class="tab-content">
       <div class="tab-pane active in" id="home">
-    <form id="tab">
-        <label>Username</label>
-        <input type="text" value="jsmith" class="input-xlarge">
-        <label>First Name</label>
-        <input type="text" value="John" class="input-xlarge">
-        <label>Last Name</label>
-        <input type="text" value="Smith" class="input-xlarge">
-        <label>Email</label>
-        <input type="text" value="jsmith@yourcompany.com" class="input-xlarge">
-        <label>Address</label>
-        <textarea value="Smith" rows="3" class="input-xlarge">
-2817 S 49th
-Apt 314
-San Jose, CA 95101
-        </textarea>
+    <s:form id="tab" action="EmployeeRegistAction">
+
         <p id="Agency">
-        <label>????</label>
-        <select name="Agency1" id="Agency1" class="input-xlarge">
+        <label>一级机构</label>
+        <s:select name="employee.Agency1" id="Agency1" class="input-xlarge">
+        <option value=" ">0</option>
+        </s:select>
                 
-        </select>
-        <label>????</label>
-        <select name="Agency2" id="Agency2" class="input-xlarge">
+        <label>二级机构</label>
+        <s:select name="employee.Agency2" id="Agency2" class="input-xlarge"/>
 
-        </select>
-        <label>????</label>
-        <select name="Agency3" id="Agency3" class="input-xlarge">
+        <label>三级机构</label>
+        <s:select name="employee.Agency3" id="Agency3" class="input-xlarge"/>
 
-        </select>
-            
         </p>
-    </form>
-      </div>
-      <div class="tab-pane fade" id="profile">
-    <form id="tab2">
-        <label>New Password</label>
-        <input type="password" class="input-xlarge">
-        <div>
-            <button class="btn btn-primary">Update</button>
-        </div>
-    </form>
-      </div>
+        <label>职位分类</label>
+        <s:select name="employee.position_class" id="" class="input-xlarge"/>
+            <option value="职位分类A">职位分类A</option>
+            <option value="职位分类B">职位分类B</option>
+            <option value="职位分类C">职位分类C</option>
+        
+        <label>职位名称</label>
+        <s:select name="employee.position_name" class="input-xlarge"/>
+            <option value="职位名称A">职位名称A</option>
+            <option value="职位名称B">职位名称B</option>
+            <option value="职位名称C">职位名称C</option>
+            
+        <label>职称</label>
+        <s:select name="employee.position_title"  class="input-xlarge"/>
+            <option value="职位名称A">职位名称A</option>
+            <option value="职位名称B">职位名称B</option>
+            <option value="职位名称C">职位名称C</option>
+        
+        <label>姓名</label>
+        <s:textfield name="employee.name" type="text" class="input-xlarge"/>
+        
+        <label>性别</label>
+        <s:select name="employee.sex" id="" class="input-xlarge"/>
+            <option value="男">职位名称A</option>
+            <option value="女">职位名称B</option>
+        
+        <label>电子邮箱</label>
+        <s:textfield name="employee.email" type="text" class="input-xlarge"/>
+        
+        <label>电话号码</label>
+        <s:textfield name="employee.tel" type="text" class="input-xlarge"/>
+        
+        <label>QQ</label>
+        <s:textfield name="employee.QQ" type="text" class="input-xlarge"/>
+        
+        <label>手机</label>
+        <s:textfield name="employee.mobile" type="text" class="input-xlarge"/>
+        
+        <label>住址</label>
+        <s:textfield name="employee.address" type="text" class="input-xlarge"/>
+        
+        <label>邮编</label>
+        <s:textfield name="employee.zip_code" type="text" class="input-xlarge"/>
+        
+        <label>国籍</label>
+        <s:select name="employee.country" id="" class="input-xlarge"/>
+            <option value="男">职位名称A</option>
+            <option value="女">职位名称B</option>
+        
+        
+        <label>出生地</label>
+        <s:textfield name="employee.birthplace" type="text" class="input-xlarge"/>
+        
+        <label>政治面貌</label>
+        <s:select class="form-control" name="employee.political" />
+                   <option value="群众">群众</option>
+                   <option value="中共党员">中共党员</option>
+                   <option value="中共预备党员">中共预备党员</option>
+                   <option value="共青团员">共青团员</option>
+                   <option value="民革党员">民革党员</option>
+                   <option value="民盟盟员">民盟盟员</option>
+                   <option value="民建会员">民建会员</option>
+                   <option value="民进会员">民进会员</option>
+                   <option value="农工党党员">农工党党员</option>
+                   <option value="致公党党员">致公党党员</option>
+                   <option value="九三学社社员">九三学社社员</option>
+                   <option value="台盟盟员">台盟盟员</option>
+                   <option value="无党派民主人士">无党派民主人士</option>
+        <label>政治面貌</label>
+        <s:select class="form-control" name="employee.religious"/>
+                    <option value="无">无</option>
+                    <option value="佛教">佛教</option>
+                    <option value="道教">道教</option>
+                    <option value="基督教">基督教</option>
+                    <option value="伊斯兰教">伊斯兰教</option>
+                    <option value="其他">其他</option>
+        
+        
+        <label>身份证号码</label>
+        <s:textfield name="employee.id_card" type="text" class="input-xlarge"/>
+        
+        <label>社保卡号码</label>
+        <s:textfield name="employee.SScard" type="text" class="input-xlarge"/>
+        
+        <label>年龄</label>
+        <s:textfield name="employee.age" type="text" class="input-xlarge"/>
+        
+        <label>学历</label>
+        <s:select class="form-control" name="employee.educational"/>
+            <option value="本科">本科</option>
+            <option value="研究生">研究生</option>
+            <option value="大专">大专</option>
+            <option value="高中">高中</option>
+            <option value="初中">初中</option>
+            <option value="小学">小学</option>
+        
+        
+        <label>专业</label>
+        <s:textfield name="employee.major" type="text" class="input-xlarge"/>
+        
+        <label>教育年限</label>
+        <s:textfield name="employee.age" type="text" class="input-xlarge"/>
+        
+        <label>薪酬标准</label>
+        <s:select name="employee.salaryTyep" id="Agency2" class="input-xlarge"/>
+        
+        <label>开户行</label>
+        <s:textfield name="employee.bank" type="text" class="input-xlarge"/>
+        
+        <label>账号</label>
+        <s:textfield name="employee.bank_card_num" type="text" class="input-xlarge"/>
+        
+        <label>登记人</label>
+        <s:textfield name="employee.registrant" type="text" class="input-xlarge"/>
+        
+        <label>建档时间</label>
+        <s:textfield name="employee.fileTime" type="text" class="input-xlarge"/>
+        
+        <label>特长</label>
+        <s:textfield name="employee.advantage" type="text" class="input-xlarge"/>
+        
+        <label>爱好</label>
+        <s:textfield name="employee.hobby" type="text" class="input-xlarge"/></
+        
+        <label>个人履历</label>
+        <s:textarea name="employee.curriculum-vitae" rows="3" class="input-xlarge"></s:textarea>
+                
+        <label>家庭关系信息</label>
+        <s:textarea name="employee.familyInfo" rows="3" class="input-xlarge"></s:textarea>
+                        
+        <label>备注</label>
+        
+        <s:textarea name="employee.ps" rows="3" class="input-xlarge"></s:textarea>
+        <s:submit  value="提交"></s:submit>
+        </s:form>
+
   </div>
 
 </div>
 
 <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">Delete Confirmation</h3>
   </div>
   <div class="modal-body">

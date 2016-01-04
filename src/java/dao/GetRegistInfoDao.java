@@ -6,15 +6,10 @@
 
 package dao;
 
-
-import java.util.List;
-import po.AgencyPo;
-
 /**
  *
  * @author acer
  */
-public interface EmployeeRegistDao {
-
-
+public interface GetRegistInfoDao {
+    
 }
