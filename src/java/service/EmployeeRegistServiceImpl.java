@@ -10,15 +10,11 @@ import dao.EmployeeRegistDaoImpl;
 import org.springframework.stereotype.Service;
 import vo.EmployeeRegistVo;
 
-/**
- *
- * @author acer
- */
 @Service
-public class EmployeeRegistServiceImpl {
+public class EmployeeRegistServiceImpl implements EmployeeRegistService{
     private EmployeeRegistDaoImpl employeeRegistDaoImpl;
-    public void getRegistInfoVo(EmployeeRegistVo employeeRegistVo){
+    public void registEmployee(EmployeeRegistVo employeeRegistVo){
         employeeRegistDaoImpl = new EmployeeRegistDaoImpl();
-        employeeRegistDaoImpl.getEmployeeRegistInfoVo(employeeRegistVo);
+        employeeRegistDaoImpl.registVo(employeeRegistVo);
     }
 }

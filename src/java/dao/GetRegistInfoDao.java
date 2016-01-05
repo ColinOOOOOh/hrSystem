@@ -6,13 +6,10 @@
 
 package dao;
 
-import java.util.List;
-import po.AgencyPo;
-
 /**
  *
  * @author acer
  */
 public interface GetRegistInfoDao {
-    public List<AgencyPo> getAgencyList();
+
 }

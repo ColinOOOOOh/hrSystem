@@ -6,25 +6,34 @@
 
 package dao;
 
+import hibernate.SessionFactoryUtils;
+import java.util.List;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
-import po.UserPo;
 import vo.LoginVo;
-
-/**
- *
- * @author acer
- */
 @Repository
 public class LoginDaoImpl implements LoginDao {
+        
+       private final SessionFactoryUtils util;
     
-                    @Override
-                    public String checkUser(LoginVo user) 
-		{         
-                    if(user.getUsername().equals("davis") && user.getPassword().equals("123")){
-                        return "SUCCESS";
-                    }else{
-                        return "FAILED";
-                    }
-                    
-		}
+        public LoginDaoImpl(){
+            this.util = SessionFactoryUtils.getInstance();
+        }
+    
+	@Override
+	public String checkUser(LoginVo user) {
+            Session session = this.util.getCurrentThreadSession();
+            Query query = session.createQuery("from UserPo as u where u.userName=? and u.userPassword=?");
+            query.setString(0, user.getUsername());
+            query.setString(1, user.getPassword());
+            List list = query.list();
+            this.util.releaseCurrentSession();
+            if (list.size() > 0) {
+                return "SUCCESS";
+            } else {
+                return "FAILED";
+            }
+	}
 }

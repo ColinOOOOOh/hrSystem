@@ -6,10 +6,10 @@
 
 package dao;
 
-import java.util.List;
+import hibernate.SessionFactoryUtils;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
-import po.AgencyPo;
-import testDb.EmployeeRegistDb;
+import po.EmployeePo;
 import vo.EmployeeRegistVo;
 
 /**
@@ -17,11 +17,20 @@ import vo.EmployeeRegistVo;
  * @author acer
  */
 @Repository
-public class EmployeeRegistDaoImpl implements EmployeeRegistDao{
- 
-    public void getEmployeeRegistInfoVo(EmployeeRegistVo employeeRegistVo){
-        
+public class EmployeeRegistDaoImpl implements EmployeeRegistDao {
+
+    private SessionFactoryUtils util;
+    
+    public EmployeeRegistDaoImpl() {
+        this.util = SessionFactoryUtils.getInstance();
+    }
+    
+    public void registVo(EmployeeRegistVo employeeRegistVo) {
+       EmployeePo po = new EmployeePo();
+       po.setEmployeeName(employeeRegistVo.getName());
+        Session session = this.util.getCurrentThreadSession();
+       session.save(po);
+       this.util.releaseCurrentSession();
     }
 
-        
 }

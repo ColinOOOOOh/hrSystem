@@ -6,27 +6,21 @@
 
 package service;
 
-import po.UserPo;
-import dao.LoginDao;
-import dao.LoginDaoImpl;
-import java.sql.SQLException;
 import javax.annotation.Resource;
 
+import dao.LoginDao;
+import dao.LoginDaoImpl;
 import org.springframework.stereotype.Service;
 import vo.LoginVo;
 
-/**
- *
- * @author acer
- */
-@Service
-public class LoginServiceImpl implements LoginService{
-    @Resource
-        private LoginDao m_loginDao;
+@Service 
+public class LoginServiceImpl implements LoginService {
+	@Resource
+	private LoginDao m_loginDao;
 
-    @Override
-     public String checkUserInfo( LoginVo user ){
-        m_loginDao = new LoginDaoImpl();
-        return  m_loginDao.checkUser(user);
-    }
+	@Override
+	public String checkUserInfo(LoginVo user) {
+		m_loginDao = new LoginDaoImpl();
+		return m_loginDao.checkUser(user);
+	}
 }

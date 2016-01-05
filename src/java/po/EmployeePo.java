@@ -4,195 +4,374 @@
  * Purpose: Defines the Class Employee
  ***********************************************************************/
 package po;
-import java.util.*;
 
-/** @pdOid 230e6387-65f4-4d11-9b79-528abba19fbe */
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Table(name = "employee")
+@Entity
 public class EmployeePo {
-   /** @pdOid 70e152a6-ea44-4366-882e-6d4411e5ba77 */
-   public java.lang.String employeeName;
-   /** @pdOid c0acdd04-06fa-48f0-9130-39736805b2c5 */
-   public short employeeSex;
-   /** @pdOid c62212d0-b96e-4e1d-8a88-73c5e8152be8 */
-   public java.lang.String employeeEmail;
-   /** @pdOid a40f7fd7-ce99-4fb2-96cc-49c43ea86f88 */
-   public java.lang.String employeeTel;
-   /** @pdOid a24d271b-cbbc-4181-ab33-7245ceec7f82 */
-   public double employeeQQ;
-   /** @pdOid b5d0f12e-527a-4b35-9fa1-75d161baebf0 */
-   public double employeeMobile;
-   /** @pdOid d61407d3-dfc9-4b05-ae97-96214e5cae3d */
-   public java.lang.String employeeHomeAddress;
-   /** @pdOid f0b5085a-8b36-4fc8-8ec4-c5e492bdae72 */
-   public java.lang.String employeeBirthplace;
-   /** @pdOid 29974b41-eddc-4060-b699-022d192c756c */
-   public java.lang.String employeeBirthday;
-   /** @pdOid 13ed0274-8420-4a84-9af0-0018abf50384 */
-   public java.lang.String employeeNational;
-   /** @pdOid f06c2f1f-4372-48cc-b250-803cf9fb46a4 */
-   public java.lang.String employeeReligion;
-   /** @pdOid a5cce8db-0cb6-4de3-a877-e6097346ea36 */
-   public java.lang.String employeePolitics;
-   /** @pdOid 7d363641-0ed4-4aa6-9929-6fac5afdc8f6 */
-   public java.lang.String employeeIDCard;
-   /** @pdOid f502753e-a3d8-4318-b094-7970453edce1 */
-   public java.lang.String employeeSocialSecurityCard;
-   /** @pdOid 22fdddeb-0b5b-4cb3-90bc-169e035eef78 */
-   public short employeeAge;
-   /** @pdOid e8439819-04b8-4e66-aeb5-bb9b795c5f8f */
-   public java.lang.String employeeMajor;
-   /** @pdOid 8c553c90-d663-48ac-8e92-ca6507a40744 */
-   public java.lang.String employeeQualifications;
-   /** @pdOid c3c6915f-3852-4b22-a6ec-c5f584ba13f6 */
-   public java.lang.String employeeBank;
-   /** @pdOid 39062999-50cd-47b3-a9e8-6d8feeb31901 */
-   public java.lang.String employeeBankCard;
-   /** @pdOid 07f1d38a-9607-460f-8b97-b1b26e442634 */
-   public java.lang.String employeeAdvantage;
-   /** @pdOid 5e69e19a-755c-4c7b-83a2-f42fd418d8f2 */
-   public java.lang.String employeeHobby;
-   /** @pdOid eedce861-4131-4d3c-9da4-18408b66ce24 */
-   public java.lang.String employeeCurriculumVitae;
-   /** @pdOid 05a8b86d-be83-4239-81ca-11101ed06a17 */
-   public java.lang.String employeeFamilyInfo;
-   /** @pdOid aa364b4d-f157-4cfc-a6ae-560f6edcdccf */
-   public java.lang.String employeeNotes;
-   /** @pdOid 3ced6c5b-e4f5-4cd2-90ea-5df8123518b1 */
-   public java.lang.String employeeFileCreateTime;
-   /** @pdOid b26dc5f4-24fd-43ff-90e7-659a0359148b */
-   public java.lang.String emplyeePhoto;
-   /** @pdOid 01fe95f9-827f-457a-851e-59de857e9d75 */
-   public double fileNumber;
-   /** @pdOid e1bf435a-ada8-486a-bc1c-f919db0d7490 */
-   public short isConfirm;
-   /** @pdOid 3b40c9a1-5602-480a-b4ac-6a507017ef31 */
-   public short isDelete;
-   
-   /** @pdRoleInfo migr=no name=Agency assc=reference6 mult=0..1 side=A */
-   public AgencyPo agency;
-   /** @pdRoleInfo migr=no name=Post assc=reference11 mult=0..1 side=A */
-   public PostPo post;
-   /** @pdRoleInfo migr=no name=User assc=reference14 mult=0..1 side=A */
-   public UserPo user;
-   /** @pdRoleInfo migr=no name=Salary assc=reference9 mult=0..1 side=A */
-   public SalaryPo salary;
-   /** @pdRoleInfo migr=no name=EmployeeSalary assc=reference10 mult=0..1 side=A */
-   public EmployeeSalaryPo employeeSalary;
+	private long employeeId;
+	private java.lang.String employeeName;
+	private short employeeSex;
+	private java.lang.String employeeEmail;
+	private java.lang.String employeeTel;
+	private double employeeQQ;
+	private double employeeMobile;
+	private java.lang.String employeeHomeAddress;
+	private java.lang.String employeeBirthplace;
+	private java.lang.String employeeBirthday;
+	private java.lang.String employeeNational;
+	private java.lang.String employeeReligion;
+	private java.lang.String employeePolitics;
+	private java.lang.String employeeIDCard;
+	private java.lang.String employeeSocialSecurityCard;
+	private short employeeAge;
+	private java.lang.String employeeMajor;
+	private java.lang.String employeeQualifications;
+	private java.lang.String employeeBank;
+	private java.lang.String employeeBankCard;
+	private java.lang.String employeeAdvantage;
+	private java.lang.String employeeHobby;
+	private java.lang.String employeeCurriculumVitae;
+	private java.lang.String employeeFamilyInfo;
+	private java.lang.String employeeNotes;
+	private java.lang.String employeeFileCreateTime;
+	private java.lang.String emplyeePhoto;
+	private double fileNumber;
+	private short isConfirm;
+	private short isDelete;
+	private AgencyPo agency;
+	private PostPo post;
+	private UserPo user;
+	private SalaryPo salary;
+	private EmployeeSalaryPo employeeSalary;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public long getEmployeeId() {
+		return employeeId;
+	}
+
+	public void setEmployeeId(long employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	@Column
+	public java.lang.String getEmployeeName() {
+		return employeeName;
+	}
+
+	public void setEmployeeName(java.lang.String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+	@Column
+	public short getEmployeeSex() {
+		return employeeSex;
+	}
+
+	public void setEmployeeSex(short employeeSex) {
+		this.employeeSex = employeeSex;
+	}
+
+	@Column
+	public java.lang.String getEmployeeEmail() {
+		return employeeEmail;
+	}
+
+	public void setEmployeeEmail(java.lang.String employeeEmail) {
+		this.employeeEmail = employeeEmail;
+	}
+
+	@Column
+	public java.lang.String getEmployeeTel() {
+		return employeeTel;
+	}
+
+	public void setEmployeeTel(java.lang.String employeeTel) {
+		this.employeeTel = employeeTel;
+	}
+
+	@Column
+	public double getEmployeeQQ() {
+		return employeeQQ;
+	}
+
+	public void setEmployeeQQ(double employeeQQ) {
+		this.employeeQQ = employeeQQ;
+	}
+
+	@Column
+	public double getEmployeeMobile() {
+		return employeeMobile;
+	}
+
+	public void setEmployeeMobile(double employeeMobile) {
+		this.employeeMobile = employeeMobile;
+	}
+
+	@Column
+	public java.lang.String getEmployeeHomeAddress() {
+		return employeeHomeAddress;
+	}
+
+	public void setEmployeeHomeAddress(java.lang.String employeeHomeAddress) {
+		this.employeeHomeAddress = employeeHomeAddress;
+	}
+
+	@Column
+	public java.lang.String getEmployeeBirthplace() {
+		return employeeBirthplace;
+	}
+
+	public void setEmployeeBirthplace(java.lang.String employeeBirthplace) {
+		this.employeeBirthplace = employeeBirthplace;
+	}
+
+	@Column
+	public java.lang.String getEmployeeBirthday() {
+		return employeeBirthday;
+	}
+
+	public void setEmployeeBirthday(java.lang.String employeeBirthday) {
+		this.employeeBirthday = employeeBirthday;
+	}
+
+	@Column
+	public java.lang.String getEmployeeNational() {
+		return employeeNational;
+	}
+
+	public void setEmployeeNational(java.lang.String employeeNational) {
+		this.employeeNational = employeeNational;
+	}
+
+	@Column
+	public java.lang.String getEmployeeReligion() {
+		return employeeReligion;
+	}
+
+	public void setEmployeeReligion(java.lang.String employeeReligion) {
+		this.employeeReligion = employeeReligion;
+	}
+
+	@Column
+	public java.lang.String getEmployeePolitics() {
+		return employeePolitics;
+	}
+
+	public void setEmployeePolitics(java.lang.String employeePolitics) {
+		this.employeePolitics = employeePolitics;
+	}
+
+	@Column
+	public java.lang.String getEmployeeIDCard() {
+		return employeeIDCard;
+	}
+
+	public void setEmployeeIDCard(java.lang.String employeeIDCard) {
+		this.employeeIDCard = employeeIDCard;
+	}
+
+	@Column
+	public java.lang.String getEmployeeSocialSecurityCard() {
+		return employeeSocialSecurityCard;
+	}
+
+	public void setEmployeeSocialSecurityCard(java.lang.String employeeSocialSecurityCard) {
+		this.employeeSocialSecurityCard = employeeSocialSecurityCard;
+	}
+
+	@Column
+	public short getEmployeeAge() {
+		return employeeAge;
+	}
+
+	public void setEmployeeAge(short employeeAge) {
+		this.employeeAge = employeeAge;
+	}
+
+	@Column
+	public java.lang.String getEmployeeMajor() {
+		return employeeMajor;
+	}
+
+	public void setEmployeeMajor(java.lang.String employeeMajor) {
+		this.employeeMajor = employeeMajor;
+	}
+
+	@Column
+	public java.lang.String getEmployeeQualifications() {
+		return employeeQualifications;
+	}
+
+	public void setEmployeeQualifications(java.lang.String employeeQualifications) {
+		this.employeeQualifications = employeeQualifications;
+	}
+
+	@Column
+	public java.lang.String getEmployeeBank() {
+		return employeeBank;
+	}
+
+	public void setEmployeeBank(java.lang.String employeeBank) {
+		this.employeeBank = employeeBank;
+	}
+
+	@Column
+	public java.lang.String getEmployeeBankCard() {
+		return employeeBankCard;
+	}
+
+	public void setEmployeeBankCard(java.lang.String employeeBankCard) {
+		this.employeeBankCard = employeeBankCard;
+	}
+
+	@Column
+	public java.lang.String getEmployeeAdvantage() {
+		return employeeAdvantage;
+	}
+
+	public void setEmployeeAdvantage(java.lang.String employeeAdvantage) {
+		this.employeeAdvantage = employeeAdvantage;
+	}
+
+	@Column
+	public java.lang.String getEmployeeHobby() {
+		return employeeHobby;
+	}
+
+	public void setEmployeeHobby(java.lang.String employeeHobby) {
+		this.employeeHobby = employeeHobby;
+	}
+
+	@Column
+	public java.lang.String getEmployeeCurriculumVitae() {
+		return employeeCurriculumVitae;
+	}
+
+	public void setEmployeeCurriculumVitae(java.lang.String employeeCurriculumVitae) {
+		this.employeeCurriculumVitae = employeeCurriculumVitae;
+	}
+
+	@Column
+	public java.lang.String getEmployeeFamilyInfo() {
+		return employeeFamilyInfo;
+	}
+
+	public void setEmployeeFamilyInfo(java.lang.String employeeFamilyInfo) {
+		this.employeeFamilyInfo = employeeFamilyInfo;
+	}
+
+	@Column
+	public java.lang.String getEmployeeNotes() {
+		return employeeNotes;
+	}
+
+	public void setEmployeeNotes(java.lang.String employeeNotes) {
+		this.employeeNotes = employeeNotes;
+	}
+
+	@Column
+	public java.lang.String getEmployeeFileCreateTime() {
+		return employeeFileCreateTime;
+	}
+
+	public void setEmployeeFileCreateTime(java.lang.String employeeFileCreateTime) {
+		this.employeeFileCreateTime = employeeFileCreateTime;
+	}
+
+	@Column
+	public java.lang.String getEmplyeePhoto() {
+		return emplyeePhoto;
+	}
+
+	public void setEmplyeePhoto(java.lang.String emplyeePhoto) {
+		this.emplyeePhoto = emplyeePhoto;
+	}
+
+	@Column
+	public double getFileNumber() {
+		return fileNumber;
+	}
+
+	public void setFileNumber(double fileNumber) {
+		this.fileNumber = fileNumber;
+	}
+
+	@Column
+	public short getIsConfirm() {
+		return isConfirm;
+	}
+
+	public void setIsConfirm(short isConfirm) {
+		this.isConfirm = isConfirm;
+	}
+
+	@Column
+	public short getIsDelete() {
+		return isDelete;
+	}
+
+	public void setIsDelete(short isDelete) {
+		this.isDelete = isDelete;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "employeeAgency")
+	public AgencyPo getAgency() {
+		return agency;
+	}
+
+	public void setAgency(AgencyPo agency) {
+		this.agency = agency;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "employeePost")
+	public PostPo getPost() {
+		return post;
+	}
+
+	public void setPost(PostPo post) {
+		this.post = post;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "employeeLogger")
+	public UserPo getUser() {
+		return user;
+	}
+
+	public void setUser(UserPo user) {
+		this.user = user;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "employeeSalary")
+	public SalaryPo getSalary() {
+		return salary;
+	}
+
+	public void setSalary(SalaryPo salary) {
+		this.salary = salary;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "employeeSalarys")
+	public EmployeeSalaryPo getEmployeeSalary() {
+		return employeeSalary;
+	}
+
+	public void setEmployeeSalary(EmployeeSalaryPo employeeSalary) {
+		this.employeeSalary = employeeSalary;
+	}
+
 }
-   
-//   /** @pdGenerated default parent getter */
-//   public AgencyPo getAgency() {
-//      return agency;
-//   }
-//   
-//   /** @pdGenerated default parent setter
-//     * @param newAgency */
-//   public void setAgency(AgencyPo newAgency) {
-//      if (this.agency == null || !this.agency.equals(newAgency))
-//      {
-//         if (this.agency != null)
-//         {
-//            AgencyPo oldAgency = this.agency;
-//            this.agency = null;
-//            oldAgency.removeEmployee(this);
-//         }
-//         if (newAgency != null)
-//         {
-//            this.agency = newAgency;
-//            this.agency.addEmployee(this);
-//         }
-//      }
-//   }
-//   /** @pdGenerated default parent getter */
-//   public PostPo getPost() {
-//      return post;
-//   }
-//   
-//   /** @pdGenerated default parent setter
-//     * @param newPost */
-//   public void setPost(PostPo newPost) {
-//      if (this.post == null || !this.post.equals(newPost))
-//      {
-//         if (this.post != null)
-//         {
-//            PostPo oldPost = this.post;
-//            this.post = null;
-//            oldPost.removeEmployee(this);
-//         }
-//         if (newPost != null)
-//         {
-//            this.post = newPost;
-//            this.post.addEmployee(this);
-//         }
-//      }
-//   }
-//   /** @pdGenerated default parent getter */
-//   public UserPo getUser() {
-//      return user;
-//   }
-//   
-//   /** @pdGenerated default parent setter
-//     * @param newUser */
-//   public void setUser(UserPo newUser) {
-//      if (this.user == null || !this.user.equals(newUser))
-//      {
-//         if (this.user != null)
-//         {
-//            UserPo oldUser = this.user;
-//            this.user = null;
-//            oldUser.removeEmployee(this);
-//         }
-//         if (newUser != null)
-//         {
-//            this.user = newUser;
-//            this.user.addEmployee(this);
-//         }
-//      }
-//   }
-//   /** @pdGenerated default parent getter */
-//   public SalaryPo getSalary() {
-//      return salary;
-//   }
-//   
-//   /** @pdGenerated default parent setter
-//     * @param newSalary */
-//   public void setSalary(SalaryPo newSalary) {
-//      if (this.salary == null || !this.salary.equals(newSalary))
-//      {
-//         if (this.salary != null)
-//         {
-//            SalaryPo oldSalary = this.salary;
-//            this.salary = null;
-//            oldSalary.removeEmployee(this);
-//         }
-//         if (newSalary != null)
-//         {
-//            this.salary = newSalary;
-//            this.salary.addEmployee(this);
-//         }
-//      }
-//   }
-//   /** @pdGenerated default parent getter */
-//   public EmployeeSalaryPo getEmployeeSalary() {
-//      return employeeSalary;
-//   }
-//   
-//   /** @pdGenerated default parent setter
-//     * @param newEmployeeSalary */
-//   public void setEmployeeSalary(EmployeeSalaryPo newEmployeeSalary) {
-//      if (this.employeeSalary == null || !this.employeeSalary.equals(newEmployeeSalary))
-//      {
-//         if (this.employeeSalary != null)
-//         {
-//            EmployeeSalaryPo oldEmployeeSalary = this.employeeSalary;
-//            this.employeeSalary = null;
-//            oldEmployeeSalary.removeEmployee(this);
-//         }
-//         if (newEmployeeSalary != null)
-//         {
-//            this.employeeSalary = newEmployeeSalary;
-//            this.employeeSalary.addEmployee(this);
-//         }
-//      }
-//   }
-//
-//}

@@ -6,20 +6,29 @@
 
 package dao;
 
-import java.util.LinkedList;
 import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+
+import hibernate.SessionFactoryUtils;
 import org.springframework.stereotype.Repository;
 import po.AgencyPo;
-
-/**
- *
- * @author acer
- */
 @Repository
-public class GetRegistInfoDaoImpl implements GetRegistInfoDao{
-    private List list;
-    public List<AgencyPo> getAgencyList(){
-        list = new LinkedList();
-        return list;
-    }
+public class GetRegistInfoDaoImpl {
+
+	private SessionFactoryUtils util;
+
+	public GetRegistInfoDaoImpl() {
+		this.util = SessionFactoryUtils.getInstance();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<AgencyPo> getAgencyList() {
+		Session session = this.util.getCurrentThreadSession();
+		Query query = session.createQuery("from AgencyPo");
+
+		return query.list();
+	}
+
 }

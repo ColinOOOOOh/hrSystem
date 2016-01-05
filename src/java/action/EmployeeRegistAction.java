@@ -6,18 +6,11 @@
 
 package action;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
+
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.springframework.stereotype.Controller;
-import po.AgencyPo;
 import service.EmployeeRegistServiceImpl;
-import service.GetRegistInfoServiceImpl;
 import vo.EmployeeRegistVo;
 
 /**
@@ -53,7 +46,7 @@ public class EmployeeRegistAction extends BaseAction{
                 )
     public String execute(){
         employeeRegistServiceImpl = new EmployeeRegistServiceImpl();
-        employeeRegistServiceImpl.getRegistInfoVo(employeeRegistVo);
+        //employeeRegistServiceImpl.getRegistInfoVo(employeeRegistVo);
         return "success";
         //缺failed
     }

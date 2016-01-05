@@ -16,11 +16,11 @@
 <!--     使用 annotation 自动注册bean,并检查@Controller, @Service, @Repository注解已被注入 -->
     <context:component-scan base-package="/action" />
     <context:component-scan base-package="/dao" />
-    <context:component-scan base-package="/service" /><!--
+    <context:component-scan base-package="/service" />
 
-     hibernate属性配置 
-    <context:property-placeholder location="classpath:resources/hibernate/hibernate.properties"/>
+<!--     hibernate属性配置 
+    <context:property-placeholder location="hibernate.cfg.xml"/>
 
-     Hibernate 配置管理 
+     Hibernate 配置管理
     <import resource="applicationContext-persistence.xml" />-->
 </beans>

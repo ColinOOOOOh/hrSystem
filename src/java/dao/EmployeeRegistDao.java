@@ -6,16 +6,6 @@
 
 package dao;
 
-
-import java.util.List;
-import po.AgencyPo;
-import vo.EmployeeRegistVo;
-
-/**
- *
- * @author acer
- */
 public interface EmployeeRegistDao {
 
-public void getEmployeeRegistInfoVo(EmployeeRegistVo employeeRegistVo);
 }

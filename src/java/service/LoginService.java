@@ -6,11 +6,10 @@
 
 package service;
 
-import java.sql.*;    //导入JDBC
 import vo.LoginVo;
 
 public interface LoginService {
-    
-    public String checkUserInfo( LoginVo user );
+
+	public String checkUserInfo(LoginVo user);
 
 }

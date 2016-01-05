@@ -6,24 +6,23 @@
 
 package service;
 
-import dao.EmployeeRegistDaoImpl;
 import dao.GetRegistInfoDaoImpl;
 import java.util.List;
+
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
+
+//import dao.GetRegistInfoDaoImpl;
 import po.AgencyPo;
 
-/**
- *
- * @author acer
- */
 @Service
-public class GetRegistInfoServiceImpl implements GetRegistInfoService{
-    @Resource
-    private GetRegistInfoDaoImpl getRegistInfoDaoImpl;
-    @Override
-    public List<AgencyPo> getAgencyList (){
-        getRegistInfoDaoImpl = new GetRegistInfoDaoImpl();
-        return getRegistInfoDaoImpl.getAgencyList();
-    }
+public class GetRegistInfoServiceImpl implements GetRegistInfoService {
+	@Resource
+	private GetRegistInfoDaoImpl getRegistInfoDaoImpl;
+
+	@Override
+	public List<AgencyPo> getAgencyList() {
+		getRegistInfoDaoImpl = new GetRegistInfoDaoImpl();
+		return getRegistInfoDaoImpl.getAgencyList();
+	}
 }

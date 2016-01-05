@@ -5,7 +5,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap Admin</title>
+    <title>登陆</title>
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -64,7 +64,7 @@
                 <ul class="nav pull-right">
                     
                 </ul>
-                <a class="brand" href="index.html"><span class="first">Your</span> <span class="second">Company</span></a>
+                <a class="brand" href="index.html"><span class="first">人力资源管理系统</span> </a>
         </div>
     </div>
     
@@ -88,7 +88,7 @@
                 </s:form>
             </div>
         </div>
-        <p class="pull-right" style=""><a href="#" target="blank">Theme by Portnine</a></p>
+        
 
     </div>
 </div>

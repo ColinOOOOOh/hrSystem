@@ -6,14 +6,14 @@
 
 package service;
 
-import java.util.List;
-import po.AgencyPo;
 import vo.EmployeeRegistVo;
+
+
 
 /**
  *
  * @author acer
  */
 public interface EmployeeRegistService {
-        public void getEmployeeRegistInfoVo(EmployeeRegistVo employeeRegistVo);
+        public void registEmployee(EmployeeRegistVo employeeRegistVo);
 }

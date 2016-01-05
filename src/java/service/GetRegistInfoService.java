@@ -7,6 +7,7 @@
 package service;
 
 import java.util.List;
+
 import po.AgencyPo;
 
 /**
@@ -14,5 +15,5 @@ import po.AgencyPo;
  * @author acer
  */
 public interface GetRegistInfoService {
-    public List<AgencyPo> getAgencyList ();
+	public List<AgencyPo> getAgencyList();
 }

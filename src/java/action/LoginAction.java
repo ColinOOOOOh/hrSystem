@@ -30,9 +30,16 @@ import vo.LoginVo;
                     System.out.println("set user");
                     this.user = m_user;
                 }
-                @Autowired
 		private LoginService m_loginService;
 
+                public LoginService getM_loginService()
+                        {
+                            return this.m_loginService;
+                        }
+                public void setM_loginService(LoginService l) {
+                    this.m_loginService = l;
+                }
+                
                 @Action(value = "loginAction", 
                 results = { @Result(name = "SUCCESS", location = "/index.html"),@Result(name = "FAILED", location = "/userRegist.html") }
                 )
@@ -45,6 +52,7 @@ import vo.LoginVo;
 				{
                                         setServletRequest(ServletActionContext.getRequest());
 					  httpSession.setAttribute("u", user);
+                                    
 					return  "SUCCESS"; 
 				}
 				else
